@@ -10,7 +10,7 @@ import {Provider} from 'react-redux'
 import {routerMiddleware, ConnectedRouter} from 'connected-react-router'
 
 import createRootReducer from 'reducers'
-import Layout from 'containers/layout'
+import routes from 'routes'
 
 const history = createBrowserHistory()
 const middleWares = [thunk, routerMiddleware(history)]
@@ -22,7 +22,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Layout />
+      {routes}
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
